@@ -68,16 +68,16 @@ def max_tile(f):
             if ele > m:
                 m = ele
 
-
+# Changed some stuff here for fun, probably broke it
 def pprint(f):
     for row in f:
         for ele in row:
             log10=len(str(ele))
             nexttext=" "*(4-log10)
             if ele==0:
-                print("    ",end="|")
+                print(" ",end="|")
             else:
-                print(nexttext+str(ele),end="|")
+                print(nexttext+str(ele),end="\")
         print()
 
 f=add_random(add_random(get_new_field()))
