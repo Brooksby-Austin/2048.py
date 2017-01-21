@@ -38,28 +38,28 @@ def get_new_field():
         f.append([])
         for j in range(4):f[i].append(0)
     return f
-
-def tilt_field(f, cmd):
-    f2=get_new_field()
-    for n in range(4):
-        if cmd=="w":liste=getnums(f,c=[n])
-        if cmd=="a":liste=getnums(f,r=[n])
-        if cmd=="s":liste=getnums(f,c=[n])[::-1]
-        if cmd=="d":liste=getnums(f,r=[n])[::-1]
-        start_len=len(liste)
-        while 0 in liste:
-            liste.remove(0)
-        i=0
-        while i < len(liste) -1:
-            if liste[i] == liste[i + 1]:
-                liste[i] = liste[i] * 2
-            i = i + 1
-        liste += [0] * (start_len - len(liste))
-        if cmd=="w": liste=sert(f2,liste, c=[n])
-        if cmd=="a": liste=sert(f2,liste, r=[n])
-        if cmd=="s": liste=sert(f2,liste, c=[n], reverse = True)
-        if cmd=="d": liste=sert(f2,liste, r=[n], reverse = True)
-    return f2
+# Yeah you don't need this cuz I say so
+# def tilt_field(f, cmd):
+#     f2=get_new_field()
+#     for n in range(4):
+#         if cmd=="w":liste=getnums(f,c=[n])
+#         if cmd=="a":liste=getnums(f,r=[n])
+#         if cmd=="s":liste=getnums(f,c=[n])[::-1]
+#         if cmd=="d":liste=getnums(f,r=[n])[::-1]
+#         start_len=len(liste)
+#         while 0 in liste:
+#             liste.remove(0)
+#         i=0
+#         while i < len(liste) -1:
+#             if liste[i] == liste[i + 1]:
+#                 liste[i] = liste[i] * 2
+#             i = i + 1
+#         liste += [0] * (start_len - len(liste))
+#         if cmd=="w": liste=sert(f2,liste, c=[n])
+#         if cmd=="a": liste=sert(f2,liste, r=[n])
+#         if cmd=="s": liste=sert(f2,liste, c=[n], reverse = True)
+#         if cmd=="d": liste=sert(f2,liste, r=[n], reverse = True)
+#     return f2
 
 def max_tile(f):
     m = 0
